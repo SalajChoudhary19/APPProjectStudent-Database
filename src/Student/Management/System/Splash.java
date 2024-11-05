@@ -13,7 +13,6 @@ public class Splash extends JFrame implements Runnable {
         add(img);
 
         setSize(1000, 1000);
-        setLocationRelativeTo(null);
 
         setVisible(true);
 
@@ -24,7 +23,6 @@ public class Splash extends JFrame implements Runnable {
     public void run() {
         try {
             setVisible(false);
-            new Login(); // Opens the Login window immediately
 
         } catch (Exception e) {
             e.printStackTrace();
