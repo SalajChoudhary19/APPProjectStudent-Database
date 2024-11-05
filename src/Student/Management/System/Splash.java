@@ -12,9 +12,8 @@ public class Splash extends JFrame implements Runnable {
         JLabel img = new JLabel(i3);
         add(img);
 
-        // Set the size and location of the splash screen once without animation
         setSize(1000, 1000);
-        setLocationRelativeTo(null); // Centers the window on the screen
+        setLocationRelativeTo(null);
 
         setVisible(true);
 
@@ -24,9 +23,8 @@ public class Splash extends JFrame implements Runnable {
 
     public void run() {
         try {
-            Thread.sleep(3000); // Keep the splash screen visible for 3 seconds
             setVisible(false);
-            // Proceed to the next class or functionality here
+            new Login(); // Opens the Login window immediately
 
         } catch (Exception e) {
             e.printStackTrace();
