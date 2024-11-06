@@ -37,12 +37,12 @@ public class Login extends JFrame implements ActionListener {
         add(passwordField);
 
         JButton loginButton = new JButton("Login");
-        loginButton.setBounds(380, 200, 150, 40);
+        loginButton.setBounds(310, 200, 150, 40);
         loginButton.addActionListener(this);
         add(loginButton);
 
         JButton BackButton = new JButton("Back");
-        BackButton.setBounds(190, 200, 150, 40);
+        BackButton.setBounds(130, 200, 150, 40);
         BackButton.addActionListener(this);
         add(BackButton);
 
