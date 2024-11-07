@@ -71,25 +71,21 @@ public class Login extends JFrame implements ActionListener {
             String query = "SELECT * FROM login WHERE username = ? AND password = ?";
 
             try {
-                // Get connection using the Connection_Data class
                 Connection_Data connData = new Connection_Data();
                 Connection conn = connData.getConnection(); // Get the connection object
                 PreparedStatement stmt = conn.prepareStatement(query); // Create PreparedStatement
                 stmt.setString(1, username); // Set the username parameter
                 stmt.setString(2, password); // Set the password parameter
 
-                // Execute the query and get the ResultSet
                 ResultSet resultSet = stmt.executeQuery();
 
-                // Check if the resultSet has any rows (meaning login was successful)
                 if (resultSet.next()) {
-                    setVisible(false); // Hide the login window
-                    new Main_Window(); // Show the main window
+                    setVisible(false);
+                    new Main_Window();
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid Username or Password");
                 }
 
-                // Close resources (always good practice)
                 stmt.close();
                 conn.close();
 
