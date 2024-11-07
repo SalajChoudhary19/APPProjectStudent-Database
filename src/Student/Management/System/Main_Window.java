@@ -105,14 +105,14 @@ public class Main_Window extends JFrame implements ActionListener {
 
         //Exit
 
-//        JMenu exit = new JMenu("Exit");
-//        exit.setForeground(Color.black);
-//        mb.add(exit);
-//
-//        JMenuItem Exitpage = new JMenuItem("Exit");
-//        Exitpage.setForeground(Color.black);
-//        exit.addActionListener(this);
-//        exit.add(Exitpage);
+        JMenu exit = new JMenu("Exit");
+        exit.setForeground(Color.black);
+        mb.add(exit);
+
+        JMenuItem Exit = new JMenuItem("Exit");
+        Exit.setForeground(Color.black);
+        Exit.addActionListener(this);
+        exit.add(Exit);
 
         setJMenuBar(mb);
 
@@ -123,13 +123,13 @@ public class Main_Window extends JFrame implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        String command = e.getActionCommand();
-        if(command.equals("Exit")){
+        String sm = e.getActionCommand();
+        if (sm.equals("Exit")){
             System.exit(0);
-        }else if(command.equals("Calculator")){
+        } else if (sm.equals("Calculator")) {
             try{
                 Runtime.getRuntime().exec("calc");
-            }catch (Exception E){
+            } catch (Exception E) {
                 E.printStackTrace();
             }
         }
