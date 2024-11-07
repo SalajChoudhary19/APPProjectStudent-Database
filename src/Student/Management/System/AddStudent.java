@@ -12,7 +12,7 @@ import com.toedter.calendar.JDateChooser;
 
 public class AddStudent extends JFrame implements ActionListener {
 
-    JTextField textName, textfather, textAddress, textPhones, textEmail, textM10, textM12, textAadhar, textStu;
+    JTextField textName, textfather, textAddress, textPhones, textEmail, textM10, textM12, textAadhar;
 
     JLabel empText;
 
@@ -52,15 +52,15 @@ public class AddStudent extends JFrame implements ActionListener {
         textfather.setBounds(600, 150, 150, 30);
         add(textfather);
 
-        JLabel StudentID = new JLabel("Student ID");
-        StudentID.setBounds(50, 200, 200, 30);
-        StudentID.setFont(new Font("serif", Font.BOLD, 20));
-        add(StudentID);
+        JLabel empID = new JLabel("Student ID");
+        empID.setBounds(50, 200, 200, 30);
+        empID.setFont(new Font("serif", Font.BOLD, 20));
+        add(empID);
 
-        textStu = new JTextField();
-        textStu.setBounds(200, 200, 150, 30);
-        textStu.setFont(new Font("serif", Font.BOLD, 20));
-        add(textStu);
+        empText = new JLabel("RA23"+f4+f4);
+        empText.setBounds(200, 200, 150, 30);
+        empText.setFont(new Font("serif", Font.BOLD, 20));
+        add(empText);
 
         JLabel DOB = new JLabel("DOB");
         DOB.setBounds(400, 200, 200, 30);
@@ -176,7 +176,7 @@ public class AddStudent extends JFrame implements ActionListener {
         if (e.getSource() == submit) {
             String name = textName.getText();
             String father = textfather.getText();
-            String StudentID = textStu.getText();
+            String empID = empText.getText();
             String dob = ((JTextField) cdob.getDateEditor().getUiComponent()).getText();
             String address = textAddress.getText();
             String phones = textPhones.getText();
@@ -188,7 +188,7 @@ public class AddStudent extends JFrame implements ActionListener {
             String department = (String) departmentBox.getSelectedItem();
 
             try{
-                String q = "INSERT INTO student values('"+name+"','"+father+"','"+StudentID+"','"+dob+"','"+address+"','"+phones+"','"+email+"','"+m10+"','"+m12+"','"+aadhar+"','"+course+"','"+department+"')";
+                String q = "INSERT INTO student values('"+name+"','"+father+"','"+empID+"','"+dob+"','"+address+"','"+phones+"','"+email+"','"+m10+"','"+m12+"','"+aadhar+"','"+course+"','"+department+"')";
                 Connection_Data connData = new Connection_Data();
                 Connection conn = connData.getConnection();
                 conn.createStatement().executeUpdate(q);
