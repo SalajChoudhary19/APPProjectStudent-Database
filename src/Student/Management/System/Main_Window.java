@@ -19,22 +19,29 @@ public class Main_Window extends JFrame implements ActionListener {
 
         //new info
 
-        JMenu newInfo = new JMenu("New Information");
+        JMenu newInfo = new JMenu("Student Information");
         newInfo.setForeground(Color.black);
         mb.add(newInfo);
 
         JMenuItem studentInfo = new JMenuItem("Student Info");
         studentInfo.setForeground(Color.black);
+        studentInfo.addActionListener(this);
         newInfo.add(studentInfo);
+
+        JMenuItem studentleaveInfo = new JMenuItem("Student Leave Info");
+        studentleaveInfo.setForeground(Color.black);
+        studentleaveInfo.addActionListener(this);
+        newInfo.add(studentleaveInfo);
 
         //details
 
-        JMenu newDetails = new JMenu("View Details");
+        JMenu newDetails = new JMenu("New Student");
         newInfo.setForeground(Color.black);
         mb.add(newDetails);
 
-        JMenuItem studentDetails = new JMenuItem("Student Details");
-        studentInfo.setForeground(Color.black);
+        JMenuItem studentDetails = new JMenuItem("Add Student");
+        studentDetails.setForeground(Color.black);
+        studentDetails.addActionListener(this);
         newDetails.add(studentDetails);
 
         //leave
@@ -45,6 +52,7 @@ public class Main_Window extends JFrame implements ActionListener {
 
         JMenuItem studentLeave = new JMenuItem("Student Leave Form");
         studentLeave.setForeground(Color.black);
+        studentLeave.addActionListener(this);
         newLeave.add(studentLeave);
 
         //Exams
@@ -79,6 +87,7 @@ public class Main_Window extends JFrame implements ActionListener {
 
         JMenuItem studentFee = new JMenuItem("Student Fee Form");
         studentFee.setForeground(Color.black);
+        studentFee.addActionListener(this);
         newFee.add(studentFee);
 
         //Utilities
@@ -132,6 +141,14 @@ public class Main_Window extends JFrame implements ActionListener {
             } catch (Exception E) {
                 E.printStackTrace();
             }
+        } else if (sm.equals("Student Info")) {
+            new StudentDetails();
+        } else if (sm.equals("Add Student")) {
+            new AddStudent();
+        }else if (sm.equals("Student Leave Form")) {
+            new StudentLeave();
+        } else if (sm.equals("Student Leave Info")) {
+            new StudentLeaveDetails();
         }
     }
     public static void main(String[] args) {
