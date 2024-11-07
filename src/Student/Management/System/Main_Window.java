@@ -2,8 +2,10 @@ package Student.Management.System;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Main_Window extends JFrame {
+public class Main_Window extends JFrame implements ActionListener {
 
     public Main_Window() {
 
@@ -67,7 +69,50 @@ public class Main_Window extends JFrame {
 
         JMenuItem studentResult = new JMenuItem("Student Results");
         studentResult.setForeground(Color.black);
-        newLeave.add(studentResult);
+        newResult.add(studentResult);
+
+        //Fee
+
+        JMenu newFee = new JMenu("Fee Details");
+        newFee.setForeground(Color.black);
+        mb.add(newFee);
+
+        JMenuItem studentFee = new JMenuItem("Student Fee Form");
+        studentFee.setForeground(Color.black);
+        newFee.add(studentFee);
+
+        //Utilities
+
+        JMenu newCalculator = new JMenu("Utilities");
+        newCalculator.setForeground(Color.black);
+        mb.add(newCalculator);
+
+        JMenuItem studentCalculator = new JMenuItem("Calculator");
+        studentCalculator.setForeground(Color.black);
+        newCalculator.add(studentCalculator);
+        studentCalculator.addActionListener(this);
+
+        //About
+
+        JMenu About = new JMenu("About");
+        About.setForeground(Color.black);
+        mb.add(About);
+
+        JMenuItem Teamdetails = new JMenuItem("Team Details");
+        Teamdetails.setForeground(Color.black);
+        Teamdetails.addActionListener(this);
+        About.add(Teamdetails);
+
+        //Exit
+
+//        JMenu exit = new JMenu("Exit");
+//        exit.setForeground(Color.black);
+//        mb.add(exit);
+//
+//        JMenuItem Exitpage = new JMenuItem("Exit");
+//        Exitpage.setForeground(Color.black);
+//        exit.addActionListener(this);
+//        exit.add(Exitpage);
 
         setJMenuBar(mb);
 
@@ -75,6 +120,19 @@ public class Main_Window extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String command = e.getActionCommand();
+        if(command.equals("Exit")){
+            System.exit(15);
+        }else if(command.equals("Calculator")){
+            try{
+                Runtime.getRuntime().exec("calc");
+            }catch (Exception E){
+                E.printStackTrace();
+            }
+        }
     }
     public static void main(String[] args) {
         new Main_Window();
