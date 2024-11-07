@@ -125,7 +125,7 @@ public class Main_Window extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String command = e.getActionCommand();
         if(command.equals("Exit")){
-            System.exit(15);
+            System.exit(0);
         }else if(command.equals("Calculator")){
             try{
                 Runtime.getRuntime().exec("calc");
