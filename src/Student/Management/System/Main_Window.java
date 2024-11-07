@@ -49,27 +49,27 @@ public class Main_Window extends JFrame implements ActionListener {
 
         //Exams
 
-        JMenu newExams = new JMenu("Exam Details");
-        newExams.setForeground(Color.black);
-        mb.add(newExams);
-
-        JMenuItem TimetableExams = new JMenuItem("Exam TimeTable");
-        TimetableExams.setForeground(Color.black);
-        newExams.add(TimetableExams);
-
-        JMenuItem SyllabusExams = new JMenuItem("Exam Syllabus");
-        SyllabusExams.setForeground(Color.black);
-        newExams.add(SyllabusExams);
-
-        //Results
-
-        JMenu newResult = new JMenu("Result");
-        newResult.setForeground(Color.black);
-        mb.add(newResult);
-
-        JMenuItem studentResult = new JMenuItem("Student Results");
-        studentResult.setForeground(Color.black);
-        newResult.add(studentResult);
+//        JMenu newExams = new JMenu("Exam Details");
+//        newExams.setForeground(Color.black);
+//        mb.add(newExams);
+//
+//        JMenuItem TimetableExams = new JMenuItem("Exam TimeTable");
+//        TimetableExams.setForeground(Color.black);
+//        newExams.add(TimetableExams);
+//
+//        JMenuItem SyllabusExams = new JMenuItem("Exam Syllabus");
+//        SyllabusExams.setForeground(Color.black);
+//        newExams.add(SyllabusExams);
+//
+//        //Results
+//
+//        JMenu newResult = new JMenu("Result");
+//        newResult.setForeground(Color.black);
+//        mb.add(newResult);
+//
+//        JMenuItem studentResult = new JMenuItem("Student Results");
+//        studentResult.setForeground(Color.black);
+//        newResult.add(studentResult);
 
         //Fee
 
