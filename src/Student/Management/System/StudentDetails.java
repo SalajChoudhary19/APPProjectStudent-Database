@@ -87,7 +87,7 @@ public class StudentDetails extends JFrame implements ActionListener {
         setSize(900,700);
         setLocation(300,100);
         setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     @Override
