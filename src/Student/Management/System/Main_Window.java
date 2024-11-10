@@ -9,7 +9,7 @@ public class Main_Window extends JFrame implements ActionListener {
 
     public Main_Window() {
 
-        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("Icons/educational-background-32fehu59qh64u5rc.jpg"));
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("Icons/background.png"));
         Image i2 = i1.getImage().getScaledInstance(1800, 940, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel img = new JLabel(i3);
@@ -55,40 +55,17 @@ public class Main_Window extends JFrame implements ActionListener {
         studentLeave.addActionListener(this);
         newLeave.add(studentLeave);
 
-        //Exams
-
-//        JMenu newExams = new JMenu("Exam Details");
-//        newExams.setForeground(Color.black);
-//        mb.add(newExams);
-//
-//        JMenuItem TimetableExams = new JMenuItem("Exam TimeTable");
-//        TimetableExams.setForeground(Color.black);
-//        newExams.add(TimetableExams);
-//
-//        JMenuItem SyllabusExams = new JMenuItem("Exam Syllabus");
-//        SyllabusExams.setForeground(Color.black);
-//        newExams.add(SyllabusExams);
-//
-//        //Results
-//
-//        JMenu newResult = new JMenu("Result");
-//        newResult.setForeground(Color.black);
-//        mb.add(newResult);
-//
-//        JMenuItem studentResult = new JMenuItem("Student Results");
-//        studentResult.setForeground(Color.black);
-//        newResult.add(studentResult);
 
         //Fee
 
-        JMenu newFee = new JMenu("Fee Details");
-        newFee.setForeground(Color.black);
-        mb.add(newFee);
-
-        JMenuItem studentFee = new JMenuItem("Student Fee Form");
-        studentFee.setForeground(Color.black);
-        studentFee.addActionListener(this);
-        newFee.add(studentFee);
+//        JMenu newFee = new JMenu("Fee Details");
+//        newFee.setForeground(Color.black);
+//        mb.add(newFee);
+//
+//        JMenuItem studentFee = new JMenuItem("Student Fee Form");
+//        studentFee.setForeground(Color.black);
+//        studentFee.addActionListener(this);
+//        newFee.add(studentFee);
 
         //Utilities
 
@@ -149,6 +126,8 @@ public class Main_Window extends JFrame implements ActionListener {
             new StudentLeave();
         } else if (sm.equals("Student Leave Info")) {
             new StudentLeaveDetails();
+        } else if (sm.equals("Team Details")) {
+            new About();
         }
     }
     public static void main(String[] args) {
