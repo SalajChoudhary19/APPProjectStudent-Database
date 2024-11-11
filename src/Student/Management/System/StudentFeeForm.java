@@ -1,5 +1,7 @@
 package Student.Management.System;
 
+import Student.Management.System.Connection_Data;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -66,7 +68,7 @@ public class StudentFeeForm extends JFrame implements ActionListener {
             ResultSet rs = c.stmt.executeQuery(query);
             while(rs.next()) {
                 textName.setText(rs.getString("name"));
-                textfName.setText(rs.getString("fname"));
+                textfName.setText(rs.getString("father"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -80,7 +82,7 @@ public class StudentFeeForm extends JFrame implements ActionListener {
                     ResultSet rs = c.stmt.executeQuery(query);
                     while(rs.next()) {
                         textName.setText(rs.getString("name"));
-                        textfName.setText(rs.getString("fname"));
+                        textfName.setText(rs.getString("father"));
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -88,7 +90,7 @@ public class StudentFeeForm extends JFrame implements ActionListener {
             }
         });
 
-        JLabel Qualification = new JLabel("Course");
+        JLabel Qualification = new JLabel("course");
         Qualification.setBounds(40,180,150,20);
         //Qualification.setFont(new Font("Tahoma",Font.BOLD,16));
         add(Qualification);
@@ -99,7 +101,7 @@ public class StudentFeeForm extends JFrame implements ActionListener {
         courseBox.setBackground(Color.WHITE);
         add(courseBox);
 
-        JLabel Department = new JLabel("Branch");
+        JLabel Department = new JLabel("department");
         Department.setBounds(40,220,150,20);
         // Department.setFont(new Font("serif",Font.BOLD,16));
         add(Department);
@@ -177,7 +179,7 @@ public class StudentFeeForm extends JFrame implements ActionListener {
                 Connection_Data c = new Connection_Data();
                 String Q = "insert into feecollege values('"+rollno+"','"+course+"','"+branch+"','"+semester+"','"+total+"')";
                 c.stmt.executeUpdate(Q);
-                JOptionPane.showMessageDialog(null , "fee Submitted successfully");
+                JOptionPane.showMessageDialog(null , "Fee Submitted successfully");
             }catch (Exception E){
                 E.printStackTrace();
             }

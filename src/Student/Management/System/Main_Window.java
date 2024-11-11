@@ -58,14 +58,19 @@ public class Main_Window extends JFrame implements ActionListener {
 
         //Fee
 
-//        JMenu newFee = new JMenu("Fee Details");
-//        newFee.setForeground(Color.black);
-//        mb.add(newFee);
-//
-//        JMenuItem studentFee = new JMenuItem("Student Fee Form");
-//        studentFee.setForeground(Color.black);
-//        studentFee.addActionListener(this);
-//        newFee.add(studentFee);
+        JMenu newFee = new JMenu("Fee Details");
+        newFee.setForeground(Color.black);
+        mb.add(newFee);
+
+        JMenuItem studentFee = new JMenuItem("Student Fee Form");
+        studentFee.setForeground(Color.black);
+        studentFee.addActionListener(this);
+        newFee.add(studentFee);
+
+        JMenuItem studentFeeStructure = new JMenuItem("Student Fee Structure");
+        studentFeeStructure.setForeground(Color.black);
+        studentFeeStructure.addActionListener(this);
+        newFee.add(studentFeeStructure);
 
         //Utilities
 
@@ -128,6 +133,10 @@ public class Main_Window extends JFrame implements ActionListener {
             new StudentLeaveDetails();
         } else if (sm.equals("Team Details")) {
             new About();
+        } else if (sm.equals("Student Fee Form")) {
+            new StudentFeeForm();
+        }else if (sm.equals("Student Fee Structure")) {
+            new FeeStructure();
         }
     }
     public static void main(String[] args) {
